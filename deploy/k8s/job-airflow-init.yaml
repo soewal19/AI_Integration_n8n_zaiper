@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: airflow-init-variables
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: airflow-cli
+          image: apache/airflow:2.8.2
+          command: ["/bin/bash","-lc"]
+          args:
+            - >
+              airflow variables set SLACK_WEBHOOK_URL "${SLACK_WEBHOOK_URL}" &&
+              airflow variables set CONFIG_PATH "${CONFIG_PATH:-/opt/airflow/dags/repo/config/endpoints.json}" &&
+              airflow variables set DB_PATH "${DB_PATH:-/opt/airflow/data/health_history.db}" &&
+              airflow variables set LOG_LEVEL "${LOG_LEVEL:-INFO}"
+          envFrom:
+            - secretRef:
+                name: monitor-secrets
+          env:
+            - name: CONFIG_PATH
+              value: /opt/airflow/dags/repo/config/endpoints.json
+            - name: DB_PATH
+              value: /opt/airflow/data/health_history.db
+            - name: LOG_LEVEL
+              value: "INFO"
+          volumeMounts:
+            - name: airflow-data
+              mountPath: /opt/airflow/data
+      volumes:
+        - name: airflow-data
+          persistentVolumeClaim:
+            claimName: airflow-data-pvc
+

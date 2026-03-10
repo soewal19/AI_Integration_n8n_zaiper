@@ -1,0 +1,24 @@
+env:
+  - name: CONFIG_PATH
+    value: /opt/airflow/dags/repo/config/endpoints.json
+  - name: DB_PATH
+    value: /opt/airflow/data/health_history.db
+  - name: LOG_LEVEL
+    value: INFO
+extraEnvFrom:
+  - secretRef:
+      name: monitor-secrets
+dags:
+  gitSync:
+    enabled: true
+    repo: "https://github.com/ORG/REPO.git"
+    branch: "main"
+    subPath: ""
+extraVolumeMounts:
+  - name: airflow-data
+    mountPath: /opt/airflow/data
+extraVolumes:
+  - name: airflow-data
+    persistentVolumeClaim:
+      claimName: airflow-data-pvc
+

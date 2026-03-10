@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.git
+.venv
+env/
+venv/
+health_report.json
+monitoring_service/health_history.db
+.DS_Store
+

@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-03-10 21:58:38",
+  "summary": {
+    "total": 4,
+    "failed": 1
+  },
+  "results": [
+    {
+      "name": "Broken API",
+      "url": "https://jsonplaceholder.typicode.com/nonexistent",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 404,
+      "response_time_ms": 316,
+      "status": "failed",
+      "error": "HTTPError: Not Found"
+    },
+    {
+      "name": "Users API",
+      "url": "https://jsonplaceholder.typicode.com/users",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "response_time_ms": 330,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "name": "Posts API",
+      "url": "https://jsonplaceholder.typicode.com/posts",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "response_time_ms": 331,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "name": "Comments API",
+      "url": "https://jsonplaceholder.typicode.com/comments",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "response_time_ms": 343,
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

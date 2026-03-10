@@ -1,0 +1,10 @@
+# Development-only tools
+ruff
+mypy
+
+# Optional (uncomment if you plan to use)
+# pydantic
+# httpx
+# apache-airflow==2.8.*
+# python-telegram-bot
+

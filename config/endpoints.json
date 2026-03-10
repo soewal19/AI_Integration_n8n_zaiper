@@ -1,0 +1,6 @@
+[
+  {"name": "Users API", "url": "https://jsonplaceholder.typicode.com/users", "method": "GET", "expected_status": 200},
+  {"name": "Posts API", "url": "https://jsonplaceholder.typicode.com/posts", "method": "GET", "expected_status": 200},
+  {"name": "Comments API", "url": "https://jsonplaceholder.typicode.com/comments", "method": "GET", "expected_status": 200},
+  {"name": "Broken API", "url": "https://jsonplaceholder.typicode.com/nonexistent", "method": "GET", "expected_status": 200}
+]
