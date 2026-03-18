@@ -6,6 +6,9 @@ Python service for monitoring external APIs:
 - writes a report to `health_report.json` and history to SQLite;
 - sends alerts to Slack or prints to console.
 
+## Repository Link
+- GitHub: [soewal19/AI_Integration_n8n_zaiper](https://github.com/soewal19/AI_Integration_n8n_zaiper)
+
 ## Stack
 - Python 3.10+
 - Standard library only: `concurrent.futures`, `urllib.request`, `sqlite3`, `logging`

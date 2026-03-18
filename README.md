@@ -6,6 +6,9 @@
 - пишет отчет в `health_report.json` и историю в SQLite;
 - отправляет алерты в Slack или печатает в консоль.
 
+## Ссылка на репозиторий
+- GitHub: [soewal19/AI_Integration_n8n_zaiper](https://github.com/soewal19/AI_Integration_n8n_zaiper)
+
 ## Стек
 - Python 3.10+
 - Стандартная библиотека: `concurrent.futures`, `urllib.request`, `sqlite3`, `logging`
